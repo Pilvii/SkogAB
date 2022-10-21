@@ -8,7 +8,7 @@ get_header();
 
 
         <?php
-        
+        query_posts('category_name=tjanster&posts_per_page=30');
         if(have_posts()){
             while(have_posts()){
                 the_post();

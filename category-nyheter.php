@@ -6,6 +6,7 @@ get_header();
         <h1>Nyheter</h1>
 
         <?php
+        
         if(have_posts()){
             while(have_posts()){
                 the_post();
@@ -43,11 +44,16 @@ get_header();
 
 
         <div class="pagination">
-            <a href="#" style="display: none;"><i class="fa-solid fa-chevron-left"></i> Föregående sida</a>
+            <?php the_posts_pagination( array(
+                'mid_size'  => 1,
+                'prev_text' => __( '<i class="fa-solid fa-chevron-left"></i> Föregående sida', 'textdomain' ),
+                'next_text' => __( 'Nästa sida <i class="fa-solid fa-chevron-right"></i>', 'textdomain' ),
+            ) ); ?>
+            <!-- <a href="#" style="display: none;"><i class="fa-solid fa-chevron-left"></i> Föregående sida</a>
             <a href="#" class="active">1</a>
             <a href="#">2</a>
             <a href="#">3</a>
-            <a href="#">Nästa sida <i class="fa-solid fa-chevron-right"></i></a>
+            <a href="#">Nästa sida <i class="fa-solid fa-chevron-right"></i></a> -->
         </div>
 
         </main>

@@ -37,7 +37,7 @@ h2{
     margin-top: 3em;
 }
 
-p, a, label, input, textarea{
+p, a, label, input, textarea, .current{
     font-family: var(--main-font);
 }
 
@@ -134,7 +134,7 @@ header{
     position: relative;
 }
 
-#navmenu ul li a:hover:after{
+#navmenu ul li a:hover:after, .current::after{
     content: "";
     height: 3px;
     width: 100%;
@@ -393,7 +393,7 @@ section:last-of-type{
     width: fit-content;
     margin: 5em auto;
 }
-.pagination a{
+.pagination a, .current{
     padding: 0.5em;
     color: black;
     text-decoration: none;
@@ -502,6 +502,7 @@ input[type=submit]:hover{
 }
 
 /*--------------END OF SINGLE STYLING--------------*/
+
 
 
 /*--------------MEDIA QUERY FOR MEDIUM SCREEN--------------*/
