@@ -21,13 +21,6 @@
             <section class="footer-links">
                 <h4>Länkar</h4>
                 <nav>
-                    <!-- <ul>
-                        <li><a href="index.html">Hem</a></li>
-                        <li><a href="services.html">Tjänster</a></li>
-                        <li><a href="news.html">Nyheter</a></li>
-                        <li><a href="about.html">Om oss</a></li>
-                        <li><a href="contact.html">Kontakt</a></li>
-                    </ul> -->
                     <?php
                     wp_nav_menu(array('theme_location' => 'footer-links'));
                     ?>
