@@ -25,7 +25,13 @@ get_header();
                     ?>
                         <article>
                             <h3><?php the_title(); ?></h3>
-                            <img src="images/tradfallning.jpg" alt="Glad man sågar i ett liggande träd">
+
+                            <!-- Har inlägget bild? -->
+                            <?php
+                                if(has_post_thumbnail()){
+                                    the_post_thumbnail('preview');
+                                }
+                            ?>
                             <p><?php the_excerpt(); ?></p>
                             <a href="<?php the_permalink();?>">Läs mer <i class="fa-solid fa-arrow-right-long"></i><span class="sr-only"> om <?php the_title(); ?></span></a>
                         </article>
@@ -39,6 +45,29 @@ get_header();
         $category_id = get_cat_ID('tjanster');
         echo get_category_link($category_id);
         ?>">Alla tjänster <i class="fa-solid fa-arrow-right-long"></i></a>
+
+        <?php
+            //Om någon widget är aktiv
+            if(is_active_sidebar('start1') || is_active_sidebar('start2') || is_active_sidebar('start3')){
+
+                ?>
+                <div class="flex-wrapper widget-area">
+                    <?php
+                        //aktivera de enkilda widgets
+                        if(is_active_sidebar('start1')){
+                            dynamic_sidebar('start1');
+                        }
+                        if(is_active_sidebar('start2')){
+                            dynamic_sidebar('start2');
+                        }
+                        if(is_active_sidebar('start3')){
+                            dynamic_sidebar('start3');
+                        }
+                    ?>
+                </div>
+                <?php
+            }
+        ?>
 
     </main>
     <?php

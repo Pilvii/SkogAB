@@ -262,6 +262,24 @@ article a i{
 .services-btn:hover{
     text-decoration: underline;
 }
+.widget-container{
+    margin: 1em;
+    flex: 1 1 29%;
+}
+.widget {
+    list-style: none;
+    max-width: 600px;
+    margin: auto;
+    padding: 1em;
+    background-color: var(--header-color);
+}
+.widget-area{
+    max-width: 1440px;
+    margin: auto;
+    margin-top: 10em;
+    flex-wrap: wrap;
+}
+
 
 /*--------------END OF MAIN CONTENT STYLING--------------*/
 
@@ -560,9 +578,6 @@ input[type=submit]:hover{
     article{
         margin:0 3em;
     }
-    article img{
-        max-height: 300px;
-    }
     .services-btn{
         max-width: 400px;
     }
@@ -603,6 +618,9 @@ input[type=submit]:hover{
         margin-left: auto;
     }
 
+    .widget-area{
+        width: 70%;
+    }
 
 
     /*--------------END OF HOME PAGE STYLING--------------*/
