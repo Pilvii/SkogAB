@@ -1,4 +1,7 @@
 <?php
+/*
+Template name: Startsida med eget innehåll
+*/
 get_header();
 ?>
     <main>
@@ -6,11 +9,22 @@ get_header();
         <div class="hero">
             <img src="<?php header_image(); ?>" alt="Stor maskin jobbar på ett träd">
             <div class="cover">
-                <h1><?php bloginfo('name'); ?> - <?php bloginfo('description'); ?></h1>
+                <h1><?php bloginfo('description'); ?></h1>
             </div>
         </div>
 
-        <h2>Våra tjänster</h2>
+        <!-- Innehållet av page -->
+        <div class="info">
+            <?php
+            if(have_posts()){
+                while(have_posts()){
+                    the_post();
+                    the_content();
+                }
+            }
+            ?>
+        </div>
+        
         <div class="flex-wrapper">
 
             <?php
@@ -31,10 +45,6 @@ get_header();
             ?>
         </div>
 
-        <a class="services-btn" href="<?php 
-        $category_id = get_cat_ID('tjanster');
-        echo get_category_link($category_id);
-        ?>">Alla tjänster <i class="fa-solid fa-arrow-right-long"></i></a>
 
     </main>
     <?php
