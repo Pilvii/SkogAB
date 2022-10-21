@@ -21,20 +21,23 @@
             <section class="footer-links">
                 <h4>Länkar</h4>
                 <nav>
-                    <ul>
+                    <!-- <ul>
                         <li><a href="index.html">Hem</a></li>
                         <li><a href="services.html">Tjänster</a></li>
                         <li><a href="news.html">Nyheter</a></li>
                         <li><a href="about.html">Om oss</a></li>
                         <li><a href="contact.html">Kontakt</a></li>
-                    </ul>
+                    </ul> -->
+                    <?php
+                    wp_nav_menu(array('theme_location' => 'footer-links'));
+                    ?>
                 </nav>
             </section>
 
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
     <script src="https://kit.fontawesome.com/6d080d2dc2.js" crossorigin="anonymous"></script>
     <?php
     wp_footer();

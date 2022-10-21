@@ -13,7 +13,7 @@ body{
 }
 
 main, .header-content, .footer-content{
-    /* Sätter maxbredden för innehållet på sidan */
+    /* Sätter maxbredden för innehållet på sidan*/
     max-width: 1440px;
     margin: auto;
 
@@ -531,15 +531,24 @@ input[type=submit]:hover{
         padding: 2em;
     }
 
+    .menu-huvudmeny-container{
+        height: 100%;
+    }
 
     .header-content{
         margin: 0;
     }
+
+    
     .flex-wrapper{
         display: flex;
         max-width: 1440px;
+        justify-content: space-evenly;
     }
-
+    
+    header .flex-wrapper{
+        justify-content: start;
+    }
 
     main{
         margin-top: 3em;
