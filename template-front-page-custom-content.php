@@ -42,8 +42,8 @@ get_header();
                                     the_post_thumbnail('preview');
                                 }
                             ?>
-                            <p><?php the_excerpt(); ?></p>
-                            <a href="<?php the_permalink();?>">Läs mer <i class="fa-solid fa-arrow-right-long"></i><span class="sr-only"> om <?php the_title(); ?></span></a>
+                            <p><?php the_content(); ?></p>
+                            
                         </article>
                     <?php
                 }

@@ -18,7 +18,7 @@ get_header();
                         <div class="flex-wrapper">
                             <div class="excerpt-and-link">
                                 <?php the_excerpt(); ?>
-                                <a href="single.html">Läs mer <i class="fa-solid fa-arrow-right-long"></i><span class="sr-only"> om trädfällning</span></a>
+                                <a href="<?php the_permalink();?>">Läs mer <i class="fa-solid fa-arrow-right-long"></i><span class="sr-only"> om trädfällning</span></a>
                             </div>
                             <!-- Om det finns en bild -->
                             <?php
