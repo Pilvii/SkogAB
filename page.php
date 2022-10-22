@@ -17,7 +17,7 @@ get_header();
 
 
         <div class="about">
-            <!-- Har inlägget bild? -->
+            <!-- Har sidan en bild? -->
             <?php
                 if(has_post_thumbnail()){
                     the_post_thumbnail('post-size');

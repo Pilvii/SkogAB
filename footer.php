@@ -13,8 +13,13 @@
             </div>
 
             <section class="footer-contact">
-                <h4>Kontaktinformation</h4>
-                <p>Skog AB<br>Adressvägen 1<br>233 32, Stadsdelen</p>
+                <?php
+                    //ändra användarnamnet till aktuell adminanvändare
+                    $the_user = get_user_by('login', 'SkogAB');
+
+                    ?>
+                    <h4>Kontaktinformation</h4>
+                    <p><?php bloginfo('title')?><br><?php echo $the_user->adress1; ?><br><?php echo $the_user->adress2; ?></p>
 
             </section>
 

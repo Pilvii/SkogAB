@@ -37,8 +37,12 @@ h2{
     margin-top: 3em;
 }
 
-p, a, label, input, textarea, .current{
+p, a, label, .current{
     font-family: var(--main-font);
+}
+
+input, textarea{
+    font-family: var(--main-font) !important;
 }
 
 /*Kod för klassen hämtad från https://www.visionaustralia.org/business-consulting/digital-access/blog/how-to-make-read-more-links-accessible*/
@@ -451,36 +455,41 @@ form{
 }
 
 input, textarea{
-    padding: 0.5em;
-    width: 100%;
-    box-sizing:border-box;
-    border-radius: 5px;
-    font-size: 12pt;
-    margin: 0.5em 0;
-    border: 1px solid black;
+    padding: 0.5em !important;
+    width: 100% !important;
+    box-sizing:border-box !important;
+    border-radius: 5px !important;
+    font-size: 12pt !important;
+    margin: 0.5em 0 !important;
+    border: 1px solid black !important;
+    max-width: 100% !important;
 }
+input:focus, textarea:focus{
+    border: 2px solid black !important;
 
+}
 label{
-    font-size: 14pt;
+    font-size: 14pt !important;
+    font-weight: 400 !important;
 }
 
 textarea{
-    resize: none;
+    resize: none !important;
 }
 
-input[type=submit]{
-    background-color: var(--header-color);
-    border: none;
-    border-radius: 0;
-    width: 70%;
-    display: block;
-    margin: 2em auto;
-    cursor: pointer;
-    font-size: 14pt;
-    font-weight: 500;
+.wpforms-submit{
+    background-color: var(--header-color) !important;
+    border: none !important;
+    border-radius: 0 !important;
+    width: 70% !important;
+    display: block !important;
+    margin: 2em auto !important;
+    cursor: pointer !important;
+    font-size: 14pt !important;
+    font-weight: 500 !important;
 }
-input[type=submit]:hover{
-    text-decoration: underline;
+.wpforms-submit:hover{
+    text-decoration: underline !important;
 }
 
 /*--------------END OF CONTACT STYLING--------------*/
@@ -514,6 +523,9 @@ input[type=submit]:hover{
     }
     .about img, .about p, .photos img{
         max-width: 700px !important;
+    }
+    form{
+        max-width: 600px;
     }
 }
 
@@ -732,13 +744,6 @@ input[type=submit]:hover{
     }
 
 
-    /*--------------CONTACT STYLING--------------*/
-
-    form{
-        max-width: 600px;
-    }
-
-    /*--------------END OF CONTACT STYLING--------------*/
 
 
 }

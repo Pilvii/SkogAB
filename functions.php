@@ -86,3 +86,62 @@ function activate_widgets(){
     ));
 
 }
+
+
+
+
+
+//Ta bort kommentarer från wp-admin
+add_action('admin_menu', 'remove_menus');
+
+function remove_menus(){
+    remove_menu_page('edit-comments.php');
+}
+
+
+
+//Lägg till adress till användare
+add_action( 'show_user_profile', 'custom_user_profile_fields' );
+add_action( 'edit_user_profile', 'custom_user_profile_fields' );
+
+function custom_user_profile_fields( $user ) {
+    ?>
+    <h3>Egna fält</h3>
+    <p>Administratörens adress visas i footern.</p>
+        <table class="form-table">
+            <tr>
+                <th>
+                    <label for="adress">Adressrad 1</label>
+                </th>
+                <td>
+                    
+                    <input type="text" name="adress1" id="adress1" value="<?php echo esc_attr( get_the_author_meta( 'adress1', $user->ID ) ); ?>" class="regular-text" />
+                    
+                    <br><span class="description">Gatunamn och nummer.</span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="adress">Adressrad 2</label>
+                </th>
+                <td>
+                    
+                    <input type="text" name="adress2" id="adress2" value="<?php echo esc_attr( get_the_author_meta( 'adress2', $user->ID ) ); ?>" class="regular-text" />
+                    
+                    <br><span class="description">Postnummer och postort</span>
+                </td>
+            </tr>
+        </table>
+    <?php
+    }
+
+add_action('personal_options_update', 'save_extra_profile_fields');
+add_action('edit_user_profile_update', 'save_extra_profile_fields');
+
+function save_extra_profile_fields($user){
+    if(!current_user_can('edit_user', $user))
+        return false;
+        update_usermeta($user, 'adress1', $_POST['adress1']);
+        update_usermeta($user, 'adress2', $_POST['adress2']);
+
+}
