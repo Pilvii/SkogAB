@@ -145,3 +145,5 @@ function save_extra_profile_fields($user){
         update_usermeta($user, 'adress2', $_POST['adress2']);
 
 }
+
+

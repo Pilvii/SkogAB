@@ -7,7 +7,7 @@
                         <path d="M105.5 52L210.722 134.5H0.277893L105.5 52Z" fill="#283618"/>
                         <path d="M105.5 0L184.741 80.25H26.2587L105.5 0Z" fill="#606C38"/>
                     </svg>
-                    <p>Skog AB</p>
+                    <p><?php bloginfo('title')?></p>
 
                 </div>
             </div>
