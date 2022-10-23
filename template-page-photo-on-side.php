@@ -1,4 +1,8 @@
 <?php
+/*
+Template name: Page med bild på sidan
+*/
+
 get_header();
 ?>
     <main>
@@ -16,14 +20,14 @@ get_header();
         ?>
 
 
-        <div class="about">
+        <div class="side">
+            <!-- Har sidan en bild? -->
+            <?php
+                if(has_post_thumbnail()){
+                    the_post_thumbnail('post-size');
+                }
+            ?>
             <div class="content">
-                <!-- Har sidan en bild? -->
-                <?php
-                    if(has_post_thumbnail()){
-                        the_post_thumbnail('post-size');
-                    }
-                ?>
                 <?php the_content();?>
             </div>
             

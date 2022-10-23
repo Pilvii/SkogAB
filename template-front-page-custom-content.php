@@ -7,7 +7,7 @@ get_header();
     <main>
 
         <div class="hero">
-            <img src="<?php header_image(); ?>" alt="Stor maskin jobbar på ett träd">
+            <img src="<?php header_image(); ?>" alt="">
             <div class="cover">
                 <h1><?php bloginfo('description'); ?></h1>
             </div>
